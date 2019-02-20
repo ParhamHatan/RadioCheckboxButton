@@ -16,17 +16,17 @@ public struct CheckboxLineStyle {
     let checkmarkLineWidth: CGFloat
     let padding: CGFloat
     
-    public init(checkBoxHeight: CGFloat, checkmarkLineWidth: CGFloat = -1, padding: CGFloat = 6) {
+    public init(checkBoxHeight: CGFloat, checkmarkLineWidth: CGFloat = -1, padding: CGFloat = 0) {
         self.checkBoxHeight = checkBoxHeight
         self.checkmarkLineWidth = checkmarkLineWidth
         self.padding = padding
     }
     
-    public init(checkmarkLineWidth: CGFloat, padding: CGFloat = 6) {
-        self.init(checkBoxHeight: 18, checkmarkLineWidth: checkmarkLineWidth, padding: padding)
+    public init(checkmarkLineWidth: CGFloat, padding: CGFloat = 0) {
+        self.init(checkBoxHeight: 14, checkmarkLineWidth: checkmarkLineWidth, padding: padding)
     }
     
-    public init(padding: CGFloat = 6) {
+    public init(padding: CGFloat = 0) {
         self.init(checkmarkLineWidth: -1, padding: padding)
     }
     
