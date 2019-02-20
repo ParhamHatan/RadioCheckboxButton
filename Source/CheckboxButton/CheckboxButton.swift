@@ -67,9 +67,9 @@ public class CheckboxButton: RadioCheckboxBaseButton {
     
     /// Setup layer of check box
     override internal func setupLayer() {
-        contentEdgeInsets = UIEdgeInsets(top: 0, left: checkboxLine.checkBoxHeight + checkboxLine.padding, bottom: 0, right: 0)
+        contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: checkboxLine.checkBoxHeight + checkboxLine.padding)
         // Make inner later here
-        let origin = CGPoint(x: 1, y: bounds.midY - (checkboxLine.checkBoxHeight/2))
+        let origin = CGPoint(x: self.frame.width - (checkboxLine.checkBoxHeight + 1), y: bounds.midY - (checkboxLine.checkBoxHeight/2))
         let rect = CGRect(origin: origin, size: checkboxLine.size)
         switch style {
         case .rounded(let radius): outerLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: radius).cgPath
@@ -81,7 +81,7 @@ public class CheckboxButton: RadioCheckboxBaseButton {
         layer.insertSublayer(outerLayer, at: 0)
         
         let path = UIBezierPath()
-        var xPos: CGFloat = (rect.width * 0.15) + origin.x
+        var xPos: CGFloat = (rect.width * 0.15)
         var yPos = rect.midY
         path.move(to: CGPoint(x: xPos, y: yPos))
         
